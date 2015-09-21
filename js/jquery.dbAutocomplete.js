@@ -20,7 +20,8 @@
                 left:  self.offset().left + 'px',
                 width: self.outerWidth()  + 'px',
                 position: "absolute"
-            }
+            },
+            timeout: 250
         }, options || {});
 
 
@@ -129,7 +130,7 @@
                             actions.append(response);
                         }
                     });
-                }, 100);
+                }, self.options.timeout);
             }
         });
     };
