@@ -1,0 +1,26 @@
+body
+{
+	padding: 10px;
+}
+
+form.search
+{
+	width: 100%;
+	max-width: 400px;
+	margin: 100px auto 0 auto;
+	background-color: #F9F9F9;
+	border: 1px solid #CCCCCC;
+	border-radius: 8px;
+	padding: 8px;
+}
+
+form.search .form-group
+{
+	margin-bottom: 0;
+}
+
+form.search .btn
+{
+	display: block;
+	width: 100%;
+}

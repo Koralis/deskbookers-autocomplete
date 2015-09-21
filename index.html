@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/dbAutocomplete.css" rel="stylesheet" />
+	</head>
+	<body>
+		<form action="https://www.deskbookers.com/search" method="get" class="form-horizontal search">
+			<div class="form-group">
+				<div class="col-sm-8">
+					<input type="text" name="q" id="search-field" class="form-control" placeholder="Search for a city" />
+				</div>
+				<div class="col-sm-4">
+					<input type="submit" class="btn btn-primary" value="Search" />
+				</div>
+			</div>
+		</form>
+
+		<!-- Scripts -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.dbAutocomplete.js"></script>
+		<script type="text/javascript">
+		// Use plugin
+		$(document).ready(function($)
+		{
+			$('#search-field').dbAutocomplete({
+                source:'https://www.deskbookers.com/en-gb/sa2.json',
+                minchars: 3
+            });
+
+            $('.search').on('keyup keypress', function(e) {
+                var code = e.keyCode || e.which;
+                if (code == 13) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+		});
+		</script>
+	</body>
+</html>
